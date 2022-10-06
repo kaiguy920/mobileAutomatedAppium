@@ -54,9 +54,13 @@ exports.config = {
     //
     capabilities: [{
     platformName: "Android",
+    // "appium:platformVersion": "11.0",
     "appium:deviceName": "Pixel 3",
     "appium:automationName": "UIAutomator2",
-    "appium:app": "app/android/ApiDemos-debug.apk"
+    // /Users/ksma/webdriverio-appium/app/android/ApiDemos-debug.apk
+    // instead of direct path, using current working directory to relative path
+    "appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk")
+    // "appium:autoGrantPermissions": true
     }],
     //
     // ===================
