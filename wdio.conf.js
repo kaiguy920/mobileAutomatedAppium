@@ -54,7 +54,7 @@ exports.config = {
     //
     capabilities: [{
     platformName: "Android",
-    "appium:platformVersion": "11.0",
+    // "appium:platformVersion": "11.0",
     "appium:deviceName": "Pixel 3",
     "appium:automationName": "UIAutomator2",
     // /Users/ksma/webdriverio-appium/app/android/ApiDemos-debug.apk
