@@ -13,6 +13,9 @@ describe('Android Elements Tests', () => {
         // find element by class name
         const className = await $('android.widget.TextView')
 
-        console.log(className);
+        console.log("****************", await className.getText());
+
+        // Assertion
+        await expect(className).toHaveText("API Demos")
     });
 });
