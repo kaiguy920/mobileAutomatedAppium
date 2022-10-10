@@ -8,4 +8,11 @@ describe('Android Elements Tests', () => {
         const actionBar = await $('~Action Bar')
         await expect(actionBar).toBeExisting()
     });
+
+    it.only('Find element by class name', async () => {
+        // find element by class name
+        const className = await $('android.widget.TextView')
+
+        console.log(className);
+    });
 });
