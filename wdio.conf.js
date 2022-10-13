@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/android/add-note-screen*.js'
+        './test/specs/**/ios*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -52,16 +52,26 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-    platformName: "Android",
-    "appium:platformVersion": "11.0",
-    "appium:deviceName": "Pixel 3",
-    "appium:automationName": "UIAutomator2",
-    // /Users/ksma/webdriverio-appium/app/android/ApiDemos-debug.apk
-    // instead of direct path, using current working directory to relative path
-    "appium:app": path.join(process.cwd(), "app/android/ColorNote Notepad.apk"),
-    "appium:autoGrantPermissions": true
-    }],
+    capabilities: [
+    // {
+    // platformName: "Android",
+    // "appium:platformVersion": "11.0",
+    // "appium:deviceName": "Pixel 3",
+    // "appium:automationName": "UIAutomator2",
+    // // /Users/ksma/webdriverio-appium/app/android/ApiDemos-debug.apk
+    // // instead of direct path, using current working directory to relative path
+    // "appium:app": path.join(process.cwd(), "app/android/ColorNote Notepad.apk"),
+    // "appium:autoGrantPermissions": true
+    // }
+
+    {
+        platformName: "iOS",
+        "appium:platformVersion": "16.0",
+        "appium:deviceName": "iPhone 14",
+        "appium:automationName": "XCUITest",
+        "appium:app": path.join(process.cwd(), "./app/ios/UIKitCatalog.app")
+    }
+],
     //
     // ===================
     // Test Configurations
