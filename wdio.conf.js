@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/android-native*.js'
+        './test/specs/android/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -59,8 +59,8 @@ exports.config = {
     "appium:automationName": "UIAutomator2",
     // /Users/ksma/webdriverio-appium/app/android/ApiDemos-debug.apk
     // instead of direct path, using current working directory to relative path
-    "appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
-    // "appium:autoGrantPermissions": true
+    "appium:app": path.join(process.cwd(), "app/android/ColorNote Notepad.apk"),
+    "appium:autoGrantPermissions": true
     }],
     //
     // ===================
