@@ -4,4 +4,54 @@ describe('iOS Find Element', () => {
         await (await $('~Simple')).click()
         await expect(await driver.getAlertText()).toContain("A Short Title Is Best")
     });
+
+    it('find by tag name', async () => {
+        // single element
+        console.log(await $('XCUIElementTypeStaticText').getText());
+    
+        // multiple elements
+        const textEls = await $$('XCUIElementTypeStaticText');
+    
+        for (const element of textEls) {
+          console.log(await element.getText());
+        }
+      });
+
+      it('find element by xpath', async () => {
+        // xpath - (//tagname[@attribute=value])
+        // await (await $('//XCUIElementTypeStaticText[@name="Alert Views"]')).click()
+        // await (await $('//XCUIElementTypeStaticText[@label="Simple"]')).click()
+
+        await (await $('//*[@name="Alert Views"]')).click()
+        await (await $('//*[@label="Simple"]')).click()
+        await expect(await driver.getAlertText()).toContain("A Short Title Is Best")
+    });
+
+      it('find element by class chain', async () => {
+        // const alertText =  '**/XCUIElementTypeStaticText[`label == "Alert Views"`]'
+        const alertText =  '**/XCUIElementTypeStaticText[`label CONTAINS "Alert"`]'
+        await (await $(`-ios class chain:${alertText}`)).click()
+        await (await $('//*[@label="Simple"]')).click()
+        await expect(await driver.getAlertText()).toContain("A Short Title Is Best")
+    });
+
+      it('find element by predicate string', async () => {
+        // easier readability
+        // const alertText =  'label == "Alert Views"'
+       const alertText =  'value BEGINSWITH[c] "alert"'
+        await (await $(`-ios predicate string:${alertText}`)).click()
+        await (await $('//*[@label="Simple"]')).click()
+        await expect(await driver.getAlertText()).toContain("A Short Title Is Best")
+    });
+
+    it.only('Exercise: Enter text in the search field', async () => {
+       await $('~Search').click()
+       await $('~Default').click()
+       
+       await $('//XCUIElementTypeSearchField').addValue("I love this course!")
+       await expect($('//XCUIElementTypeSearchField')).toHaveAttr("value")
+
+       await $('~Clear text').click()
+       await expect($('//XCUIElementTypeSearchField')).not.toHaveAttr("value")
+    });
 });
