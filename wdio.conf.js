@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/ios-native*.js'
+        './test/specs/ios/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -69,7 +69,7 @@ exports.config = {
         "appium:platformVersion": "16.0",
         "appium:deviceName": "iPhone 14",
         "appium:automationName": "XCUITest",
-        "appium:app": path.join(process.cwd(), "./app/ios/UIKitCatalog.app")
+        "appium:app": path.join(process.cwd(), "app/ios/MVCTodo.app")
     }
 ],
     //
