@@ -12,13 +12,13 @@ describe('Todo Item', () => {
         await $('//*[@value="Title"]').addValue("Buy groceries")
         await $('//*[@value="Due"]').click()
         await $('~Date Picker').click()
-        await $('~Thursday, October 20').click()
+        await $('~Tuesday, October 25').click()
         await $('//XCUIElementTypeWindow[@index=2]').click()
         await $('~Create').click()
 
         // assertion
         await expect ($("~Buy groceries")).toBeExisting()
-        await expect ($("~Due October 20, 2022")).toBeExisting()
+        await expect ($("~Due October 25, 2022")).toBeExisting()
 
     });
 });

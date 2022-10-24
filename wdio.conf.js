@@ -5,7 +5,7 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    //
+    // 
     port: 4723,
     //
     // ==================
@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/ios/ios-todo-item*.js'
+        './test/specs/ios/ios-todo-list-screen*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -52,6 +52,7 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
+
     capabilities: [
     // {
     // platformName: "Android",
@@ -72,7 +73,7 @@ exports.config = {
         "appium:app": path.join(process.cwd(), "app/ios/MVCTodo.app")
     }
 ],
-    //
+ //
     // ===================
     // Test Configurations
     // ===================
