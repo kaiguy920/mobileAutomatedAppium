@@ -1,5 +1,9 @@
-const AddNoteScreen = require("../screenobjects/android/add-notes")
-const EditNoteScreen = require("../screenobjects/android/edit-note")
+// const AddNoteScreen = require("../screenobjects/android/add-notes")
+// const EditNoteScreen = require("../screenobjects/android/edit-note")
+
+import AddNoteScreen from '../../screenobjects//android/add-notes'
+import EditNoteScreen from '../../screenobjects//android/edit-notes'
+
 
 describe('Add Notes', () => {
     it('Skip tutorial', async () => {
