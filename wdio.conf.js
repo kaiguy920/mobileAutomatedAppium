@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/ios/ios-todo-list-screen*.js'
+        './test/specs/ios/ios-todo-item*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -67,8 +67,8 @@ exports.config = {
 
     {
         platformName: "iOS",
-        "appium:platformVersion": "16.0",
-        "appium:deviceName": "iPhone 14",
+        "appium:platformVersion": "14.5",
+        "appium:deviceName": "iPhone 12",
         "appium:automationName": "XCUITest",
         "appium:app": path.join(process.cwd(), "app/ios/MVCTodo.app")
     }

@@ -1,24 +1,27 @@
+const ListScreen = require('../../screenobjects/ios/list.screen')
+const ItemScreen = require('../../screenobjects/ios/item.screen')
+
+
 describe('Todo Item', () => {
     it('create a Todo Item', async () => {
-        await $('//*[@name="Create list"]').click();
-        await $('//*[@value="List Name"]').addValue("Things to do today");
-        await $('~Create').click();
-    
-        await expect(await $("~Things to do today")).toBeExisting();
+        await ListScreen.createListBtn.click();
+        await ListScreen.listNameInput.addValue("Things to do today");
+        await ListScreen.createBtn.click();
+        await expect(await ListScreen.listNameField("Things to do today")).toBeExisting();
 
         // create todo item
-        await $("~Things to do today").click()
-        await $('//*[@name="Create item"]').click()
-        await $('//*[@value="Title"]').addValue("Buy groceries")
-        await $('//*[@value="Due"]').click()
-        await $('~Date Picker').click()
-        await $('~Tuesday, October 25').click()
-        await $('//XCUIElementTypeWindow[@index=2]').click()
-        await $('~Create').click()
+        await ListScreen.listNameField("Things to do today").click()
+        await ItemScreen.createItem.click();
+        await ItemScreen.title.addValue("Buy groceries");
+        await ItemScreen.dueDate.click();
+        await ItemScreen.datePicker.click();
+        await ItemScreen.getByAccessibility("Tuesday, October 25").click();
+        await ItemScreen.secondWindow.click();
+        await ItemScreen.createBtn.click();
 
         // assertion
-        await expect ($("~Buy groceries")).toBeExisting()
-        await expect ($("~Due October 25, 2022")).toBeExisting()
+        expect(await $("~Buy groceries")).toBeExisting();
+        expect(await $("~Due October 25, 2022")).toBeExisting();
 
     });
 });
