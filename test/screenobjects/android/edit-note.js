@@ -1,4 +1,4 @@
-const AddNoteScreen = require("./add-notes")
+const AddNoteScreen = require("./add-note")
 class EditNoteScreen {
 
     get firstNote() {
