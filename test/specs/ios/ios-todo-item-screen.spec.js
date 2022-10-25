@@ -12,36 +12,37 @@ describe('Todo Item', () => {
     await ListScreen.listNameField("Things to do today").click();
   });
 
-  beforeEach(() => {
-    console.log("BEFORE EACH HOOK!!")
-  });
+  // beforeEach(() => {
+  //   console.log("BEFORE EACH HOOK!!")
+  // });
 
-  after(() => {
-    console.log("AFTER HOOK!!")
-  });
+  // after(() => {
+  //   console.log("AFTER HOOK!!")
+  // });
 
-  afterEach(() => {
-    console.log("AFTER EACH HOOK!!")
-  });
+  // afterEach(() => {
+  //   console.log("AFTER EACH HOOK!!")
+  // });
 
   it('Create a Todo Item', async () => {
     // Create Todo Item
-    // await ItemScreen.createItem.click();
-    // await ItemScreen.title.addValue("Buy groceries");
-    // await ItemScreen.dueDate.click();
-    // await ItemScreen.datePicker.click();
-    // await ItemScreen.getByAccessibility("Thursday, October 27").click();
-    // await ItemScreen.secondWindow.click();
-    // await ItemScreen.createBtn.click();
+    await ItemScreen.createItem.click();
+    await ItemScreen.title.addValue("Buy groceries");
+    await ItemScreen.dueDate.click();
+    await ItemScreen.datePicker.click();
+    await ItemScreen.getByAccessibility("Thursday, October 27").click();
+    await ItemScreen.secondWindow.click();
+    await ItemScreen.createBtn.click();
 
-    // // assertion
-    // await expect(await ItemScreen.getByAccessibility("Buy groceries")).toBeExisting();
-    // await expect(await ItemScreen.getByAccessibility("Due October 27, 2022")).toBeExisting();
+    // assertion
+    await expect(await ItemScreen.getByAccessibility("Buy groceries")).toBeExisting();
+    await expect(await ItemScreen.getByAccessibility("Due October 27, 2022")).toBeExisting();
   });
-  it('TEST2', () => {
+  
+  // it('TEST2', () => {
     
-  });
-  it('TEST3', () => {
+  // });
+  // it('TEST3', () => {
     
-  });
+  // });
 });
