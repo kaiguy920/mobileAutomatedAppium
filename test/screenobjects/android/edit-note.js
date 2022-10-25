@@ -54,4 +54,4 @@ class EditNoteScreen {
 }
 
 // module.exports = new EditNoteScreen()
-export default new AddNoteScreen()
+export default new EditNoteScreen()

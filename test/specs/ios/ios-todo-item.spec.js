@@ -23,8 +23,8 @@ describe('Todo Item', () => {
         await ItemScreen.createBtn.click();
 
         // assertion
-        expect(await $("~Buy groceries")).toBeExisting();
-        expect(await $("~Due October 25, 2022")).toBeExisting();
+       await expect(await $("~Buy groceries")).toBeExisting();
+       await expect(await $("~Due October 25, 2022")).toBeExisting();
 
     });
 });
